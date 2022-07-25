@@ -1,0 +1,74 @@
+BASE DE DADOS
+
+customer_id	account_created_date	first_purchase_date	purchase_category	purchase_amount
+dwib7d	2017-01-12	2017-01-12	eye	28.79
+5zt49g	2017-02-21	2017-02-26	face	164.00
+gwl5n2	2017-04-05	2017-04-05	eye	44.15
+fgh7rq	2017-04-21	2017-04-25	lip	12.65
+2ll7r2	2017-05-12	2017-05-14	lip	8.67
+1tqswk	2017-06-20	2017-06-24	face	140.80
+300ovd	2017-08-13	2017-08-14	eye	16.78
+2b267j	2017-10-21	2017-10-24	face	78.65
+5wvq0z	2017-12-01	2017-12-01	lip	20.24
+amhjn2	2017-12-06	2017-12-07	eye	51.86
+
+
+Tarefa 1
+Queremos calcular o valor de compra médio dos primeiros pedidos e podemos dividir este cálculo em pedaços utilizando funções. Vamos começar escrevendo uma função que retorne a soma de uma coluna e usá-la para calcular o valor total de todas as compras do nosso conjunto de dados.
+Escreva uma função chamada sum_column() com dois parâmetros dispostos nesta ordem:
+data: uma lista de listas que armazena nosso conjunto de dados de cosméticos
+col_index: um número inteiro que especifica o índice da coluna que será somada
+O corpo da função deve incluir um ciclo for que itera sobre cada linha do conjunto de dados cosmetics_data e acrescenta o valor no índice especificado a um total em execução. A função também deve retornar a soma total depois de calculada.
+O pré-código já inclui o código que irá imprimir o resultado da função referente a coluna do valor de compra do conjunto de dados cosmetics_data.
+
+cosmetics_data = [['dwib7d', '2017-01-12', '2017-01-12', 'eye', 28.79],
+ ['5zt49g', '2017-02-21', '2017-02-26', 'face', 164.00],
+ ['gwl5n2', '2017-04-05', '2017-04-05', 'eye', 44.15],
+ ['fgh7rq', '2017-04-21', '2017-04-25', 'lip', 12.65],
+ ['2ll7r2', '2017-05-12', '2017-05-14', 'lip', 8.67],
+ ['1tqswk', '2017-06-20', '2017-06-24', 'face', 140.80],
+ ['300ovd', '2017-08-13', '2017-08-14', 'eye', 16.78],
+ ['2b267j', '2017-10-21', '2017-10-24', 'face', 78.65],
+ ['5wvq0z', '2017-12-01', '2017-12-01', 'lip', 20.24],
+ ['amhjn2', '2017-12-06', '2017-12-07', 'eye', 51.86]]
+
+# escreva seu código aqui
+def sum_column(data, col_index):
+    total_sum = 0
+    for row in data:
+        total_sum += row[col_index]
+    return total_sum
+
+# este código irá verificar o resultado da sua função
+print(sum_column(cosmetics_data, 4))
+
+Tarefa 2
+Vamos avançar um pouco mais. Usando a função sum_column() que você escreveu na última tarefa, escreva uma função para calcular a média de uma coluna.
+Escreva uma função chamada avg_column() com dois parâmetros dispostos nesta ordem:
+data: uma lista de listas que armazena nosso conjunto de dados de cosméticos
+col_index: um número inteiro que especifica o índice da coluna da qual obteremos a média
+O corpo da função deverá chamar a função sum_function() com os parâmetros da função avg_function() transmitidos como os argumentos da função sum_function(). Para calcular a média, divida o resultado da sum_function() pelo tamanho do parâmetro data. Em seguida, retorne o resultado.
+A função sum_column() da última lição já está incluída no pré-código e, portanto, não será necessário escrevê-la novamente (os detalhes da função podem ser um pouco diferentes daqueles que você escreveu, mas o comportamento será idêntico).
+
+cosmetics_data = [['dwib7d', '2017-01-12', '2017-01-12', 'eye', 28.79],
+ ['5zt49g', '2017-02-21', '2017-02-26', 'face', 164.00],
+ ['gwl5n2', '2017-04-05', '2017-04-05', 'eye', 44.15],
+ ['fgh7rq', '2017-04-21', '2017-04-25', 'lip', 12.65],
+ ['2ll7r2', '2017-05-12', '2017-05-14', 'lip', 8.67],
+ ['1tqswk', '2017-06-20', '2017-06-24', 'face', 140.80],
+ ['300ovd', '2017-08-13', '2017-08-14', 'eye', 16.78],
+ ['2b267j', '2017-10-21', '2017-10-24', 'face', 78.65],
+ ['5wvq0z', '2017-12-01', '2017-12-01', 'lip', 20.24],
+ ['amhjn2', '2017-12-06', '2017-12-07', 'eye', 51.86]]
+
+def sum_column(data, col_index):
+    total_sum = 0
+    for row in data:
+        total_sum += row[col_index]
+    return total_sum
+
+def avg_column(data, col_index):
+    return sum_column(data, col_index) / len(data)
+
+# este código irá verificar o resultado da sua função
+print(avg_column(cosmetics_data, 4))
