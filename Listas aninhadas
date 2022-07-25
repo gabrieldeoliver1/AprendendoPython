@@ -1,0 +1,182 @@
+Tarefa 1
+Neste caso, o conjunto de dados é apresentado como uma lista aninhada salva na variável console_data. Futuramente, você irá aprender como carregar grandes conjuntos de dados extraídos de um arquivo em uma linha de código. Mas, por enquanto, iremos fornecer os dados do pré-código já salvos em uma variável.
+Vamos começar imprimindo nossos dados em uma linda tabela. Podemos fazer isso exibindo cada linha da tabela em sua própria linha de código e cada elemento com um espaçamento uniforme. Para isso, precisamos utilizar um ciclos for aninhados e uma f-string na nossa função print().
+Exiba o resultado de modo que cada elemento fique alinhado à esquerda e tenha strings com o tamanho fixo de 20 caracteres. Consulte a lição 6 para relembrar o aspecto deste código.
+
+console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+for row in console_data:
+    for elem in row:
+        print(f'{elem:<20}', end='')
+    print()
+    
+    
+    Tarefa 2
+Agora, vamos recuperar partes específicas dos dados da tabela. Use a indexação de listas para imprimir a linha contendo dados sobre o Sega CD. 
+Não se preocupe com a formatação do resultado, apenas imprima a sublista inteira. 
+Em seguida, numa outra linha, use a indexação mais uma vez para imprimir o número de consoles Game Boy que foram vendidos durante o período em que ele foi produzido
+    
+    console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+print(console_data[8])
+print (console_data[1][5])
+    
+
+Tarefa 3
+Use um ciclo for para imprimir a primeira coluna da tabela — os nomes dos consoles.
+
+console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+for console in console_data:
+    print(console[0])
+    
+    Tarefa 4
+A última coluna da tabela armazena o número de consoles vendidos durante o tempo em que foram produzidos. 
+Quantos consoles de todos os tipos foram vendidos no total? 
+Faça esse cálculo utilizando um ciclo for para somar todos os valores na coluna de unidades vendidas, salvando o resultado em uma variável chamada total_sold. 
+Em seguida, imprima a variável total_sold.
+
+console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+total_sold = 0
+for row in console_data:
+    total_sold += row[5] 
+
+    total_sold
+print(total_sold)
+
+Tarefa 5
+Faz sentido que os consoles mais populares sejam fabricados por mais tempo antes de serem descontinuados, então vamos calcular a métrica baseada no tempo durante o qual o console foi fabricado e adicioná-la como uma nova coluna no final do conjunto de dados.
+Para isso, percorra cada linha da variável console_data e calcule o tempo em anos que o console foi fabricado usando as colunas do ano de lançamento e do ano em que o console parou de ser fabricado. Não se esqueça de anexar o resultado a cada linha para criar a nova coluna.
+Nós incluímos um ciclo for separado no pré-código para imprimir o resultado, mas o ciclo for que calcula o tempo que o console foi fabricado deve ser colocado antes dele.
+
+# O nome da variável "console_data" significa em inglês "dados de console"
+console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+for row in console_data:
+    lifespan = row[4] * row[5]
+    row.append(lifespan)
+
+
+# este código irá imprimir a tabela de resultados
+for row in console_data:
+    for elem in row:
+        print(f'{elem:<20}', end='')
+    print()
+    
+    Tarefa 6
+Calculamos com sucesso nossa primeira métrica e a incluímos em nosso conjunto de dados como uma nova coluna. Mas os valores estão espalhados por toda parte, o que dificulta a comparação entre os consoles. Podemos resolver isso ordenando nossos dados!
+O código que cria a coluna do tempo durante o qual o console foi fabricado da última tarefa é fornecido no pré-código, assim como o código para imprimir o resultado. Adicione uma linha de código para ordenar a variável console_data pela coluna do tempo durante o qual o console foi fabricado partindo do maior para o menor e salve o resultado em uma variável chamada sorted_lifespan_data. 
+Lembre-se que o valor do tempo que o console foi fabricado é o último elemento de cada linha.
+
+console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+for row in console_data:
+    lifespan = row[3] - row[2]
+    row.append(lifespan)
+
+# escreva seu código aqui
+sorted_lifespan_data = sorted(console_data, key=lambda row: row[-1], reverse=True)
+
+# este código irá imprimir a tabela de resultados
+for row in sorted_lifespan_data:
+    for elem in row:
+        print(f'{elem:<20}', end='')
+    print()
+    
+    Tarefa 7
+Calcule uma nova métrica, a de receita total, a qual iremos calcular com base no preço de lançamento e no número total de unidades vendidas (os dois últimos valores de cada linha). Use um ciclo for sobre as linhas da variável console_data para calcular a receita total e anexar o resultado ao final de cada linha.
+Após o seu laço for, escreva a linha de código para ordenar console_data da receita mais alta para a mais baixa. Lembre-se de que a metrica da receita é agora armazenada como uma nova coluna no final de cada sublista. Salve seu resultado ordenado em uma nova variável chamada sorted_revenue_data.
+O código para imprimir o resultado final já está inserido no pré-código, portanto deixe-o como está.
+console_data = [['NES', 'Nintendo', 1985, 1995, 179.0, 61910000],
+ ['Game Boy', 'Nintendo', 1989, 2003, 89.99, 118690000],
+ ['SNES', 'Nintendo', 1990, 2003, 199.0, 49100000],
+ ['Virtual Boy', 'Nintendo', 1995, 1996, 179.95, 770000],
+ ['Game Boy Advance', 'Nintendo', 2001, 2010, 99.99, 81510000],
+ ['Atari 2600', 'Atari', 1977, 1992, 199.0, 30000000],
+ ['Sega Genesis', 'Sega', 1988, 1997, 189.0, 30750000],
+ ['Game Gear', 'Sega', 1990, 1997, 149.99, 10620000],
+ ['Sega CD', 'Sega', 1991, 1996, 299.0, 2240000],
+ ['3DO', 'The 3DO Company', 1993, 1996, 699.99, 2000000],
+ ['PlayStation', 'Sony Electronics', 1994, 2006, 299.0, 102490000],
+ ['PlayStation 2', 'Sony Electronics', 2000, 2013, 299.0, 155000000]]
+
+# escreva seu código aqui
+for row in console_data:
+    lifespan = row[4] * row[5]
+    row.append(lifespan)
+
+# este código classificará seus resultados
+sorted_revenue_data = sorted(console_data, key=lambda row: row[-1], reverse=True)
+
+# este código irá imprimir a tabela de resultados
+for row in sorted_revenue_data:
+    for elem in row:
+        print(f'{elem:<20}', end='')
+    print()
