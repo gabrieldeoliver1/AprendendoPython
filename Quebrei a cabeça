@@ -1,0 +1,7 @@
+nba_players = { # dicionarios que em uma chave tem varios itens
+    'James Harden': [2191, 2818, 2335],
+    'LeBron James': [2251, 1505, 1698],
+    'Damian Lillard': [1962, 2067, 2009],
+}
+for player in nba_players.items(): # itera sobre cada item do dicionario
+    print(player[0], int(sum(player[1]) / len(player[1]))) # mostra a chave no indice[0] e a média dos valores em número inteiro no índice[-1]
