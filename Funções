@@ -72,3 +72,43 @@ def avg_column(data, col_index):
 
 # este código irá verificar o resultado da sua função
 print(avg_column(cosmetics_data, 4))
+
+----------------------------------------------------------------------------------------------------------
+Escreva uma função filter_by_genre com dois parâmetros:
+data — lista de listas com dados dos filmes
+genre — nome do gênero, com 'drama' como padrão
+A função deverá retornar dados dos filmes do gênero especificado no segundo parâmetro.
+
+# A tabela da função print aceita a lista de listas como entrada e não retorna nada (None é retornado implicitamente)
+def print_movie_info(data):
+    for movie in data:
+        for elem in movie:
+            print(f'{elem:<46}', end='')
+        print()
+
+
+movies_filtered = []
+
+def filter_by_genre(data, genre ='drama'): 
+    for row in movies_info:
+        if genre in row[3]:
+            movies_filtered.append(row)
+    return (movies_filtered)
+
+
+movies_info = [
+    ['Um Sonho de LIberdade', 'EUA', 1994, 'drama', 142, 9.111],
+    ['O Poderoso Chefão', 'EUA', 1972, 'drama, crime', 175, 8.730],
+    ['O Cavaleiro das Trevas', 'EUA', 2008, 'fantasia, ação, suspense', 152, 8.499],
+    ['A Lista de Schindler', 'EUA', 1993, 'drama', 195, 8.818],
+    ['O Senhor dos Anéis: O Retorno do Rei', 'Nova Zelândia', 2003, 'fantasia, aventura, drama', 201, 8.625],
+    ['Pulp Fiction: Tempo de Violência', 'EUA', 1994, 'suspense, comedia, crime', 154, 8.619],
+    ['Três Homens em Conflito', 'Itália', 1966, 'faroeste', 178, 8.521],
+    ['Clube da Luta', 'EUA', 1999, 'suspense, drama, crime', 139, 8.644],
+    ['Harakiri', 'Japão', 1962, 'drama, ação, histórico', 133, 8.106],
+    ['Stalker', 'URSS', 1979, 'ficção sientífica, drama, detetive', 163, 8.083], 
+    ['Vá e veja', 'URSS', 1985, 'drama, guerra', 136, 8.094]
+]
+
+movies_filtered = filter_by_genre(movies_info)
+print_movie_info(movies_filtered)
