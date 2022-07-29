@@ -1,0 +1,136 @@
+Agora que você já sabe como obter informações gerais das tabelas, está na hora de aprender algumas técnicas básicas para recuperar dados específicos delas.
+Muitas vezes você só irá precisar de uma pequena quantidade de dados para resolver uma tarefa. Por exemplo, se você está procurando por imóveis que custem menos que 8.000 dólares, você pode criar um filtro:
+import pandas as pd
+properties_df = pandas.read_csv('/datasets/properties_us.csv')
+
+filtered_objects = []
+
+for index in range(len(properties_df)):
+    if properties_df['price'][index] <= 8000:
+        filtered_objects.append(properties_df['price'][index])
+        
+print(len(filtered_objects)) 
+Resultado
+292 
+Esta resolução está correta, mas agora vamos aprender como encurtar o processo. As cinco linhas desse código podem virar uma só:
+import pandas
+properties_df = pandas.read_csv('/datasets/properties_us.csv')
+
+print(properties_df[properties_df['price'] <= 8000]['price'].count()) 
+Resultado
+292 
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log.csv')
+# obtendo uma célula
+#index_res = df.loc[7, 'genre']
+
+# recortando uma coluna
+#index_res = df.loc[:, 'genre']
+
+# recortando várias colunas usando seus nomes
+#index_res = df.loc[: , ['genre', 'Artist']]
+
+# recortando um intervalo de colunas
+#index_res = df.loc[:, 'total play': 'genre']
+
+# recortando uma linha
+#index_res = df.loc[1]
+
+# recortando todas as colunas, começando com a linha escolhida
+#index_res = df.loc[1:]
+
+# recortando todas as linhas até a linha escolhida
+#index_res = df.loc[:3]
+
+# ecortando várias linhas consecutivas
+# index_res = df.loc[2:5]
+
+print(index_res)
+
+
+
+--------------------------------------------------------------------------------
+
+
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log.csv')
+
+# Recortando linhas dentro de um determinado intervalo e selecionando uma determinada coluna
+# index_res = df.loc[2:10, 'genre']
+
+# Recortando várias colunas consecutivas e selecionando uma linha específica
+# index_res = df.loc[5, 'total play': 'genre']
+
+# Selecionando as colunas determinadas e uma linha específica
+# index_res = df.loc[10, ['total play', 'Artist']]
+
+# Selecionando as colunas determinadas e recortando várias linhas consecutivas
+# index_res = df.loc[7:10, ['total play', 'genre']]
+
+print(index_res)
+
+
+
+-------------------------------------------------------
+
+
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log.csv')
+
+# recortando uma coluna
+# index_res = df['genre']
+
+# recortando várias colunas usando seus nomes
+# index_res = df[['genre', 'Artist']]
+
+# recortando todas as colunas, começando com a linha escolhida
+# index_res = df[1:]
+
+# recortando todas as linhas até a escolhida
+# index_res = df[:3]
+
+# recortando várias linhas consecutivas
+# index_res = df[2:5]
+
+print(index_res)
+
+
+
+
+---------------------------------------------------------------
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log.csv')
+# linhas em que o gênero é jazz
+jazz_df = df[df['genre'] == 'jazz']
+print(jazz_df)
+
+# linhas em que o total reproduzido é maior do que 90
+high_total_play_df = df[df['total play'] > 90] 
+print(high_total_play_df)
+
+# linhas em que o total reproduzido é menor ou igual a 10
+low_total_play_df = df[df['total play'] <= 10]
+print(low_total_play_df)
+
+---------------------------------------------------
+
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log.csv')
+
+# selecionando linhas em que o gênero é jazz e o total reproduzido varia entre 80 e 130
+df = df[df['total play'] >= 80]
+df = df[df['total play'] <= 130]
+df = df[df['genre'] == 'jazz']
+
+print(df)
